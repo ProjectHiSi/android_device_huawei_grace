@@ -289,6 +289,8 @@ on early-fs
     start oeminfo_nvm
 
 on fs
+export LD_SHIM_LIBS "/system/lib/libcutils.so|libshim_log.so:/system/lib64/libcutils.so|libshim_log.so"
+
     mount ext4 /dev/block/mmcblk0p11 /mnvm2:0 wait rw noatime nosuid nodev
     mount ext4 /dev/block/mmcblk0p17 /modem_log wait rw noatime nosuid nodev
     mount ext4 /dev/block/platform/hi_mci.0/by-name/splash2 /splash2 wait rw noatime nosuid nodev
