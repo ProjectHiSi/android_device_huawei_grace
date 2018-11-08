@@ -73,6 +73,18 @@ TARGET_USES_ION := true
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
 
+# Kernel
+BOARD_KERNEL_BASE := 0x00678000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_CMDLINE := mem=3072M coherent_pool=512K mmcparts=mmcblk0:p1(vrl),p2(vrl_backup),p6(modemnvm_factory),p9(splash),p10(modemnvm_backup),p11(modemnvm_img),p12(modemnvm_system),p14(3rdmodemnvm),p15(3rdmodemnvmback),p17(modem_om),p20(modemnvm_update),p30(modem),p31(modem_dsp),p32(dfx),p33(3rdmodem) androidboot.selinux=permissive ate_enable=true
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07588000 --tags_offset 0xffb88000
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_HEADER_ARCH := arm64
+BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_KERNEL_SOURCE := kernel/huawei/grace
+TARGET_KERNEL_CONFIG := grace_defconfig
+
 # NFC
 BOARD_NFC_CHIPSET := pn547
 NXP_CHIP_TYPE := 1
