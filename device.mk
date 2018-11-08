@@ -115,7 +115,8 @@ PRODUCT_PACKAGES += \
 
 # LibShim
 PRODUCT_PACKAGES += \
-    libshim_icu
+    libshim_icu \
+    libshim_gui
 
 # NFC
 PRODUCT_PACKAGES += \
