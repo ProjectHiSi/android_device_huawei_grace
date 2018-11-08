@@ -289,7 +289,7 @@ on early-fs
     start oeminfo_nvm
 
 on fs
-    export LD_SHIM_LIBS "/system/lib/libcutils.so|libshim_log.so:/system/lib64/libcutils.so|libshim_log.so:/system/lib/hw/audio.primary.hi3635.so|libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|libshim_icu.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so"
+    export LD_SHIM_LIBS "/system/lib/libcutils.so|libshim_log.so:/system/lib64/libcutils.so|libshim_log.so:/system/lib/hw/audio.primary.hi3635.so|libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|libshim_icu.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/lib64/libril.so|libshim_icu.so"
 
     mount ext4 /dev/block/mmcblk0p11 /mnvm2:0 wait rw noatime nosuid nodev
     mount ext4 /dev/block/mmcblk0p17 /modem_log wait rw noatime nosuid nodev
