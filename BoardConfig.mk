@@ -48,5 +48,20 @@ TARGET_NO_RADIOIMAGE := true
 # Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
+# Wifi
+TARGET_USES_64_BIT_BCMDHD	 := true
+BOARD_WLAN_DEVICE                := bcmdhd
+BOARD_WLAN_DEVICE_REV            := bcm4334
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4334_hw.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4334_apsta_hw.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/vendor/firmware/fw_bcm4334_hw.bin"
+WIFI_BAND                        := 802_11_ABG
+
 # inherit from the proprietary version
 -include vendor/huawei/grace/BoardConfigVendor.mk
