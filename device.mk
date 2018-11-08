@@ -105,6 +105,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     usbaudio.kl
 
+# libGLES_android
+PRODUCT_PACKAGES += \
+    libGLES_android
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
