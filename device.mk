@@ -19,6 +19,13 @@ $(call inherit-product-if-exists, vendor/huawei/grace/grace-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/clatd.conf:system/etc/clatd.conf \
+    $(LOCAL_PATH)/prebuilts/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml \
+    $(LOCAL_PATH)/prebuilts/gps47531config_beta.xml:system/etc/gps47531config_beta.xml
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
