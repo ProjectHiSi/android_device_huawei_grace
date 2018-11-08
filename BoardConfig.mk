@@ -63,6 +63,10 @@ NXP_CHIP_TYPE := 1
 # Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
+# Sepolicy
+BOARD_SEPOLICY_DIRS += \
+	device/huawei/grace/sepolicy
+
 # Wifi
 TARGET_USES_64_BIT_BCMDHD	 := true
 BOARD_WLAN_DEVICE                := bcmdhd
