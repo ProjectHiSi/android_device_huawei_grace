@@ -101,6 +101,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bt_vendor.conf
 
+# hwcomposer
+PRODUCT_PACKAGES += \
+    hwcomposer.hi3635
+
 # KEYPAD
 PRODUCT_PACKAGES += \
     usbaudio.kl
