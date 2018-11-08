@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Inherit from kiwi device
+# Inherit from grace device
 $(call inherit-product, device/huawei/grace/device.mk)
 
 # Boot animation
