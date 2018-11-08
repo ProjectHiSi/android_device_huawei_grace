@@ -138,6 +138,10 @@ PRODUCT_PACKAGES += \
     init.hi3635.usb.rc \
     ueventd.hi3635.rc
 
+# USB
+PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory
+
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
