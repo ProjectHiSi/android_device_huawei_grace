@@ -103,6 +103,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi3635
+
 # Sepolicy
 BOARD_SEPOLICY_DIRS += \
 	device/huawei/grace/sepolicy
