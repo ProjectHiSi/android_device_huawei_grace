@@ -85,6 +85,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/huawei/grace
 TARGET_KERNEL_CONFIG := grace_defconfig
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # NFC
 BOARD_NFC_CHIPSET := pn547
 NXP_CHIP_TYPE := 1
