@@ -19,5 +19,16 @@ $(call inherit-product-if-exists, vendor/huawei/grace/grace-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.hi3635 \
+    init.hi3635.chip.usb.rc \
+    init.hi3635.connectivity.rc \
+    init.hi3635.gps.rc \
+    init.hi3635.power.rc \
+    init.hi3635.rc \
+    init.hi3635.usb.rc \
+    ueventd.hi3635.rc
+
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
