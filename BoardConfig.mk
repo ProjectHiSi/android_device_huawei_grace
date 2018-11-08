@@ -45,5 +45,8 @@ TARGET_BOOTLOADER_BOARD_NAME := hi3635
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
+# Properties
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
+
 # inherit from the proprietary version
 -include vendor/huawei/grace/BoardConfigVendor.mk
