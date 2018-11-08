@@ -113,6 +113,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libGLES_android
 
+# LibShim
+PRODUCT_PACKAGES += \
+    libshim_icu
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
