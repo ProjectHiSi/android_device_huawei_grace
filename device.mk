@@ -142,6 +142,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.enable_boot_charger_mode=0 \
+    persist.sys.usb.config=manufacture,adb
+
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
