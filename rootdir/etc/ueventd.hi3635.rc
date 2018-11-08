@@ -47,7 +47,7 @@
 /dev/v4l-subdev6				0660  system 	camera
 /dev/v4l-subdev7				0660  system 	camera
 
-/dev/dsm					0660  system	dsm
+/dev/dsm					0660  system	system
 /dev/block/mmcblk0p4                		0660  system    system
 /dev/block/mmcblk0p19				0660  system 	system
 /dev/hifi_misc                                  0660  root      audio
