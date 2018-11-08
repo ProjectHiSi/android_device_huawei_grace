@@ -49,6 +49,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
+# BT
+PRODUCT_PACKAGES += \
+    bt_vendor.conf
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi3635 \
