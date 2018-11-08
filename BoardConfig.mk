@@ -60,6 +60,11 @@ TARGET_BOOTLOADER_BOARD_NAME := hi3635
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
+# CMHW
+BOARD_HARDWARE_CLASS := \
+    $(LOCAL_PATH)/cmhw \
+    hardware/cyanogen/cmhw
+
 # Display
 USE_OPENGL_RENDERER := true
 TARGET_HARDWARE_3D := true
