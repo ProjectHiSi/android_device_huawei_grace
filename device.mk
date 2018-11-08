@@ -95,6 +95,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bt_vendor.conf
 
+# KEYPAD
+PRODUCT_PACKAGES += \
+    usbaudio.kl
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
