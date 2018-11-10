@@ -29,6 +29,7 @@
 
 #include "power.h"
 #include "utils.h"
+#include "power-feature.h"
 
 static pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 static int boostpulse_fd = -1;
@@ -249,6 +250,9 @@ int get_feature(struct power_module *module __unused, feature_t feature)
 {
     int ret = -1;
     switch (feature) {
+      case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
+        ret = 1;
+        break;
       case POWER_FEATURE_SUPPORTED_PROFILES:
 	ret = PROFILE_MAX;
 	break;
@@ -261,6 +265,10 @@ int get_feature(struct power_module *module __unused, feature_t feature)
 void set_feature(struct power_module *module __unused, feature_t feature, int state)
 {
     switch (feature) {
+      case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
+        set_device_specific_feature(module, feature, state);
+        ALOGI("POWER_FEATURE_DOUBLE_TAP_TO_WAKE: %d",state);
+        break;
       case POWER_FEATURE_SUPPORTED_PROFILES:
         ALOGI("POWER_FEATURE_SUPPORTED_PROFILES: %d",state);
 	break;

@@ -27,6 +27,8 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#define NODE_MAX (64)
+
 int sysfs_read(char *path, char *s, int num_bytes);
 int sysfs_write_str(char *path, char *s);
 int sysfs_write_int(char *path, int value);

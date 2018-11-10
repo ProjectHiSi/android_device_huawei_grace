@@ -27,9 +27,6 @@
 #define INTERACTIVE_PATH0 "/sys/devices/system/cpu/cpu0/cpufreq/interactive/"
 #define INTERACTIVE_PATH1 "/sys/devices/system/cpu/cpu4/cpufreq/ondemand/"
 
-#define TAP_TO_WAKE_NODE "/sys/touchscreen/easy_wakeup_gesture"
-#define TAP_TO_WAKE_UP "/sys/touchscreen/wakeup_gesture_enable"
-
 #define VID_ENC_TIMER_RATE 30000
 #define VID_ENC_IO_IS_BUSY 0
 

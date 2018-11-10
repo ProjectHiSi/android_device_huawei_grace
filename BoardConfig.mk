@@ -72,6 +72,9 @@ ANDROID_ENABLE_RENDERSCRIPT := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_ION := true
 
+# DT2W Node
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchscreen/easy_wakeup_gesture"
+
 # Enable CPUSETS
 ENABLE_CPUSETS := true
 
