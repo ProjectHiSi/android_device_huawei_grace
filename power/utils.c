@@ -40,34 +40,6 @@
 
 #include <utils/Log.h>
 
-int sysfs_read(char *path, char *s, int num_bytes)
-{
-    char buf[80];
-    int count;
-    int ret = 0;
-    int fd = open(path, O_RDONLY);
-
-    if (fd < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error opening %s: %s\n", path, buf);
-
-        return -1;
-    }
-
-    if ((count = read(fd, s, num_bytes - 1)) < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error writing to %s: %s\n", path, buf);
-
-        ret = -1;
-    } else {
-        s[count] = '\0';
-    }
-
-    close(fd);
-
-    return ret;
-}
-
 int sysfs_write_str(char *path, char *s)
 {
     char buf[80];
