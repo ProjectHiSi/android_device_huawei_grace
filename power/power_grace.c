@@ -28,50 +28,21 @@
 #include <utils/Log.h>
 
 #include "power.h"
+#include "utils.h"
 
 static pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 static int boostpulse_fd = -1;
 static int current_power_profile = 1;
 
-static int sysfs_write_str(char *path, char *s)
-{
-    char buf[80];
-    int len;
-    int ret = 0;
-    int fd;
-
-    fd = open(path, O_WRONLY);
-    if (fd < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error opening %s: %s\n", path, buf);
-        return -1 ;
-    }
-
-    len = write(fd, s, strlen(s));
-    if (len < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error writing to %s: %s\n", path, buf);
-        ret = -1;
-    }
-
-    close(fd);
-
-    return ret;
-}
-
-static int sysfs_write_int(char *path, int value)
-{
-    char buf[80];
-    snprintf(buf, 80, "%d", value);
-    return sysfs_write_str(path, buf);
-}
-
 static bool check_governor(void)
 {
     struct stat s;
     int err = stat(INTERACTIVE_PATH0, &s);
-    if (err != 0) return false;
-    if (S_ISDIR(s.st_mode)) return true;
+    if (err != 0) 
+	return false;
+    if (S_ISDIR(s.st_mode)) 
+	return true;
+
     return false;
 }
 
@@ -227,9 +198,9 @@ static void power_hint(struct power_module *module __unused,
     int len;
 
     switch (hint) {
-    case POWER_HINT_INTERACTION:
-    case POWER_HINT_LAUNCH:
-    case POWER_HINT_CPU_BOOST:
+      case POWER_HINT_INTERACTION:
+      case POWER_HINT_LAUNCH:
+      case POWER_HINT_CPU_BOOST:
         if (is_profile_valid(current_power_profile) < 0) {
             ALOGD("%s: no power profile selected yet", __func__);
             return;
@@ -255,17 +226,17 @@ static void power_hint(struct power_module *module __unused,
             }
         }
         break;
-    case POWER_HINT_SET_PROFILE:
+      case POWER_HINT_SET_PROFILE:
         pthread_mutex_lock(&lock);
         set_power_profile(*(int32_t *)data);
         pthread_mutex_unlock(&lock);
         break;
-    case POWER_HINT_VIDEO_ENCODE:
+      case POWER_HINT_VIDEO_ENCODE:
         pthread_mutex_lock(&lock);
         process_video_encode_hint(data);
         pthread_mutex_unlock(&lock);
         break;
-    default:
+      default:
         break;
     }
 }
@@ -278,22 +249,22 @@ int get_feature(struct power_module *module __unused, feature_t feature)
 {
     int ret = -1;
     switch (feature) {
-    case POWER_FEATURE_SUPPORTED_PROFILES:
+      case POWER_FEATURE_SUPPORTED_PROFILES:
 	ret = PROFILE_MAX;
 	break;
-    default:
+      default:
         break;
     }
     return ret;
 }
 
-void set_feature(struct power_module *module, feature_t feature, int state)
+void set_feature(struct power_module *module __unused, feature_t feature, int state)
 {
     switch (feature) {
-    case POWER_FEATURE_SUPPORTED_PROFILES:
+      case POWER_FEATURE_SUPPORTED_PROFILES:
         ALOGI("POWER_FEATURE_SUPPORTED_PROFILES: %d",state);
 	break;
-    default:
+      default:
         break;
     }
 }
@@ -301,7 +272,7 @@ void set_feature(struct power_module *module, feature_t feature, int state)
 struct power_module HAL_MODULE_INFO_SYM = {
     .common = {
         .tag = HARDWARE_MODULE_TAG,
-        .module_api_version = POWER_MODULE_API_VERSION_0_2,
+        .module_api_version = POWER_MODULE_API_VERSION_0_3,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = POWER_HARDWARE_MODULE_ID,
         .name = "HI3635 Power HAL",
