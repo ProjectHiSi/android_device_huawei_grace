@@ -161,11 +161,37 @@ on init
     chown system system /sys/kernel/perfhub/cpuaffinity
     chmod 0660 /sys/kernel/perfhub/cpuaffinity
 
-    chmod 0664 /sys/devices/virtual/graphics/fb0/lcd_color_temperature
-    chmod 0664 /sys/devices/virtual/graphics/fb0/lcd_ic_color_enhancement_mode
     chmod 0664 /sys/devices/platform/huawei_touch/easy_wakeup_gesture
     chmod 0664 /sys/devices/platform/huawei_touch/touch_glove
     chmod 0664 /sys/devices/platform/huawei_touch/wakeup_gesture_enable
+
+    chown system system /dev/cpuset/foreground/cpus
+    chmod 0664 /dev/cpuset/foreground/cpus
+    chown system system /dev/cpuset/foreground/boost/cpus
+    chmod 0664 /dev/cpuset/foreground/boost/cpus
+    chown system system /dev/cpuset/background/cpus
+    chmod 0664 /dev/cpuset/background/cpus
+    chown system system /dev/cpuset/system-background/cpus
+    chmod 0664 /dev/cpuset/system-background/cpus
+    chown system system /dev/cpuset/top-app/cpus
+    chmod 0664 /dev/cpuset/top-app/cpus
+
+    chown system system /sys/devices/system/cpu/cpu0/online
+    chmod 0664 /sys/devices/system/cpu/cpu0/online
+    chown system system /sys/devices/system/cpu/cpu1/online
+    chmod 0664 /sys/devices/system/cpu/cpu1/online
+    chown system system /sys/devices/system/cpu/cpu2/online
+    chmod 0664 /sys/devices/system/cpu/cpu2/online
+    chown system system /sys/devices/system/cpu/cpu3/online
+    chmod 0664 /sys/devices/system/cpu/cpu3/online
+    chown system system /sys/devices/system/cpu/cpu4/online
+    chmod 0664 /sys/devices/system/cpu/cpu4/online
+    chown system system /sys/devices/system/cpu/cpu5/online
+    chmod 0664 /sys/devices/system/cpu/cpu5/online
+    chown system system /sys/devices/system/cpu/cpu6/online
+    chmod 0664 /sys/devices/system/cpu/cpu6/online
+    chown system system /sys/devices/system/cpu/cpu7/online
+    chmod 0664 /sys/devices/system/cpu/cpu7/online
 
     chown system  system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
