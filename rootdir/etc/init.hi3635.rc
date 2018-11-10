@@ -312,50 +312,32 @@ on fs
     chown system system /dev/block/mmcblk0p36
     chmod 0660 /dev/block/mmcblk0p36
 
-    restorecon       /sys/class/leds/red/brightness
-    restorecon       /sys/class/leds/green/brightness
-    restorecon       /sys/class/leds/blue/brightness
-    restorecon      /sys/class/leds/torch_front/brightness
-    restorecon      /sys/class/leds/torch/brightness
-    restorecon      /sys/class/hw_power/charger/charge_data/enable_charger
-    restorecon     /sys/class/leds/lcd_backlight0/brightness
-    restorecon     /sys/class/graphics/fb0/lcd_test_config
-    restorecon     /sys/class/graphics/fb0/amoled_pcd_errflag_check
-    restorecon     /sys/class/ina231/ina231_0/ina231_debug
-    restorecon     /sys/class/ina231/ina231_0/ina231_set
-    restorecon     /sys/class/ina231/ina231_0/ina231_value
-    restorecon     /sys/class/ina231/ina231_1/ina231_debug
-    restorecon    /sys/class/ina231/ina231_1/ina231_set
-    restorecon    /sys/class/ina231/ina231_1/ina231_value
-    restorecon    /sys/class/graphics/fb0/amoled_acl
-    restorecon    /sys/class/graphics/fb0/amoled_hbm
-    restorecon      /sys/kernel/set_hmp_thresholds/policy
-    restorecon      /sys/class/graphics/fb0/lcd_cabc_mode
-    restorecon      /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
-    restorecon      /sys/devices/system/cpu/cpu4/cpufreq/scaling_available_frequencies
-    restorecon      /sys/devices/ddrfreq/devfreq/ddrfreq/min_freq
-    restorecon      /sys/devices/ddrfreq/devfreq/ddrfreq/max_freq
-    restorecon      /sys/devices/ddrfreq/devfreq/ddrfreq/available_frequencies
-    restorecon      /sys/devices/gpufreq/devfreq/gpufreq/min_freq
-    restorecon      /sys/devices/gpufreq/devfreq/gpufreq/max_freq
-    restorecon      /sys/devices/gpufreq/devfreq/gpufreq/available_frequencies
-    restorecon    /sys/class/timed_output/vibrator/vibrator_calib
-    restorecon      /sys/class/leds/torch/flash_thermal_protect
-    restorecon      /sys/class/hw_power/charger/charge_data/iin_thermal
-    restorecon      /sys/class/hw_power/charger/charge_data/ichg_thermal
-    restorecon       /sys/devices/amba.12/f7101000.i2c/i2c-1/1-001c/command
-    restorecon       /sys/devices/amba.13/f7101000.i2c/i2c-1/1-001c/command
-    restorecon       /sys/devices/f8000000.hisi_led/leds/blue/brightness
-    restorecon       /sys/devices/f8000000.hisi_led/leds/red/brightness
-    restorecon       /sys/devices/f8000000.hisi_led/leds/green/brightness
-    restorecon       /sys/devices/platform/balong_fb.1/leds/lcd_backlight0/brightness
-    restorecon       /sys/devices/virtual/leds/torch/brightness
-
-    restorecon       /sys/class/graphics/fb0/lcd_cabc_mode
-    restorecon       /sys/class/leds/torch/flash_thermal_protect
+    restorecon /sys/class/leds/red/brightness
+    restorecon /sys/class/leds/green/brightness
+    restorecon /sys/class/leds/blue/brightness
+    restorecon /sys/class/leds/torch/brightness
+    restorecon /sys/class/leds/torch/flash_thermal_protect
+    restorecon /sys/class/hw_power/charger/charge_data/enable_charger
+    restorecon /sys/class/leds/lcd_backlight0/brightness
+    restorecon /sys/class/graphics/fb0/lcd_test_config
+    restorecon /sys/class/graphics/fb0/amoled_pcd_errflag_check
+    restorecon /sys/class/graphics/fb0/amoled_acl
+    restorecon /sys/class/graphics/fb0/amoled_hbm
+    restorecon /sys/kernel/set_hmp_thresholds/policy
+    restorecon /sys/class/graphics/fb0/lcd_cabc_mode
+    restorecon /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+    restorecon /sys/devices/system/cpu/cpu4/cpufreq/scaling_available_frequencies
+    restorecon /sys/devices/ddrfreq/devfreq/ddrfreq/min_freq
+    restorecon /sys/devices/ddrfreq/devfreq/ddrfreq/max_freq
+    restorecon /sys/devices/ddrfreq/devfreq/ddrfreq/available_frequencies
+    restorecon /sys/class/devfreq/gpufreq/min_freq
+    restorecon /sys/class/devfreq/gpufreq/max_freq
+    restorecon /sys/class/devfreq/gpufreq/available_frequencies
+    restorecon /sys/class/timed_output/vibrator/vibrator_calib
+    restorecon /sys/class/hw_power/charger/charge_data/iin_thermal
+    restorecon /sys/class/hw_power/charger/charge_data/ichg_thermal
 
     chown radio radio sys/devices/platform/balong_power/state
-
 
 on post-fs
     mkdir /splash2/sim 0775 root system
